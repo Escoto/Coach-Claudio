@@ -1,0 +1,8 @@
+# Athlete data (private)
+.claude/memory/athlete-profile.md
+athlete_plan/*.md
+
+# Local settings
+.claude/settings.local.json
+*.local.json
+.env
