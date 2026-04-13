@@ -16,10 +16,10 @@ A training coach powered by Claude Code. Works for triathletes, runners, cyclist
 
 | Command | What it does |
 |---------|-------------|
-| `/onboard` | Conversational intake to build your athlete profile (goals, availability, fitness, injuries). Run this first. |
-| `/plan-week` | Generates a Monday-Sunday training plan with readiness gates, intensity targets, and progression guardrails. |
-| `/review-session` | Deep analysis of a single training session — plan vs execution, intensity zones, coaching observations. |
-| `/review-week` | Full weekly summary — volume, recovery trends, execution vs plan, flags, and a primer for next week. |
+| `/onboard` | Conversational intake to build your athlete profile (goals, availability, fitness, injuries). Run this first. See [[onboard]]. |
+| `/plan-week` | Generates a Monday-Sunday training plan with [[readiness gates\|readiness gates]], [[intensity-zones\|intensity targets]], and [[periodization\|progression guardrails]]. See [[plan-week]]. |
+| `/review-session` | Deep analysis of a single training session — plan vs execution, [[intensity-zones\|intensity zones]], coaching observations. See [[review-session]]. |
+| `/review-week` | Full weekly summary — volume, [[recovery-monitoring\|recovery trends]], execution vs plan, flags, and a primer for next week. See [[review-week]]. |
 
 ## Data Sources
 
@@ -34,7 +34,7 @@ claude mcp add garmin -e GARMIN_EMAIL="you@email.com" -e GARMIN_PASSWORD="yourpa
 ```
 
 ### Option 2: CSV Files
-Export your training data as CSV and place it in the repo. See `templates/csv-import-guide.md` for the format spec and export instructions for Garmin, Strava, and Apple Health.
+Export your training data as CSV and place it in the repo. See [[csv-import-guide]] for the format spec and export instructions for Garmin, Strava, and Apple Health.
 
 ### Option 3: Manual
 Describe your sessions in plain text. The coach works with whatever you give it.
@@ -64,11 +64,21 @@ Your personal data (athlete profile, training plans, weekly logs) is gitignored 
 
 ## Knowledge Base
 
-The `coach-knowledge/` directory contains training science, recovery protocols, and sport-specific guidance as individual Markdown files with Obsidian-compatible linking. Open `coach-knowledge/_index.md` for a map of all topics. You can browse and extend this knowledge base using [Obsidian](https://obsidian.md) if desired.
+The `coach-knowledge/` directory contains training science, recovery protocols, and sport-specific guidance as individual Markdown files with Obsidian-compatible linking. Open the [[_index|Map of Content]] for a map of all topics. You can browse and extend this knowledge base using [Obsidian](https://obsidian.md) if desired.
+
+| Knowledge File | Covers |
+|---------------|--------|
+| [[thresholds]] | All hard numerical guardrails (single source of truth) |
+| [[periodization]] | Mesocycles, progression, session sequencing, readiness gates |
+| [[recovery-monitoring]] | HRV, readiness, sleep, ACWR, deload triggers |
+| [[intensity-zones]] | Zone models, RPE scales, cardiac drift, recovery estimation |
+| [[sport-adaptations]] | Endurance, strength, hybrid athlete guidance |
+| [[injury-prevention]] | Load management, red/yellow flags |
+| [[nutrition]] | Fueling, event nutrition, weight management |
 
 ## Customization
 
-- **Athlete profile:** Run `/onboard` again to update any section
+- **Athlete profile:** Run [[onboard|/onboard]] again to update any section
 - **MCP servers:** Add your fitness platform MCP in `.claude/settings.local.json`
 - **Model:** Set your preferred Claude model in `.claude/settings.json`
 
