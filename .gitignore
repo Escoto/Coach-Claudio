@@ -6,4 +6,6 @@ athlete_plan/*.md
 .claude/settings.local.json
 *.local.json
 .env
-_*.md
+/_*.md
+
+*.pdf
